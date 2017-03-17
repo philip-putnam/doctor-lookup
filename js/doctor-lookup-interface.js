@@ -6,11 +6,11 @@ var displaySearchResults = function(searchResults) {
   var doctors = searchResults.results[0].data;
 
   for (var index = 0; index < doctors.length; index++) {
-    $('#search-results').append("<p><strong>" + doctors[index].profile.first_name + ' ' + doctors[index].profile.last_name +
-                                "</strong></p><div class='hidden' id='" + index + "'><p><strong>Bio:</strong></p><p>" +  doctors[index].profile.bio +
+    $('#search-results').append("<p class='doctor'><strong>" + doctors[index].profile.first_name + ' ' + doctors[index].profile.last_name +
+                                "</strong></p><div class='initially-hidden' id='" + index + "'><p><strong>Bio:</strong></p><p>" +  doctors[index].profile.bio +
                                 "</p></div>");
-    $('p').click(function() {
-
+    $('p.doctor').last().click(function() {
+      $('div#' + this.nextSibling.id).toggle();
     });
   }
 };
