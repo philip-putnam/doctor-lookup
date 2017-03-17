@@ -15,7 +15,13 @@ function addDoctorInfo(doctors, index) {
   $('p.doctor').last().click(function() {
     $('.col-md-8').show();
     $('#doctor-info').text('');
-    $('#doctor-info').append("<p><strong>" + doctors[index].profile.first_name + ' ' + doctors[index].profile.last_name + "<br><img src='" + doctors[index].profile.image_url + "'></strong></p><p><p><strong>Bio:</strong></p><p>" +  doctors[index].profile.bio +
+    $('.specialties').text('');
+    $('#doctor-info').append("<p><strong>" + doctors[index].profile.first_name + ' ' + doctors[index].profile.last_name + ", " + doctors[index].profile.title + "</strong></p><img src='" + doctors[index].profile.image_url + "'><br><p class='specialties'><strong>Specialties:</strong><br></p>");
+    console.log('hello');
+    for (var ctr = 0; ctr < doctors[index].specialties.length; ctr++) {
+      $('.specialties').append(doctors[index].specialties[ctr].actor + ", ");
+    }
+    $('#doctor-info').append("<strong>Bio:</strong></p><p>" +  doctors[index].profile.bio +
     "</p></div>");
   });
 }
