@@ -2,9 +2,12 @@ var Search = require('./../js/doctor-lookup.js').searchModule;
 
 $(document).ready(function() {
 
-  $('#search-results').click(function(event) {
+  $('#doctor-search').click(function(event) {
     event.preventDefault();
 
+    var medicalIssue = $('medical-issue').val();
+    var search = new Search();
+    search.getDoctors(medicalIssue);
 
   });
 
