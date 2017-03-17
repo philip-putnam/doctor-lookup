@@ -1,7 +1,18 @@
 var Search = require('./../js/doctor-lookup.js').searchModule;
 
-var displaySearchResults = function(result) {
-  console.log(result);
+var displaySearchResults = function(searchResults) {
+  $('#search-results').text('');
+  $('#search-results').append("<h2>Search Results: </h2><h2>Doctors:</h2>");
+  var doctors = searchResults.results[0].data;
+
+  for (var index = 0; index < doctors.length; index++) {
+    $('#search-results').append("<p><strong>" + doctors[index].profile.first_name + ' ' + doctors[index].profile.last_name +
+                                "</strong></p><div class='hidden' id='" + index + "'><p><strong>Bio:</strong></p><p>" +  doctors[index].profile.bio +
+                                "</p></div>");
+    $('p').click(function() {
+
+    });
+  }
 };
 
 $(document).ready(function() {
