@@ -2,11 +2,24 @@ h1, h3 {
   text-align: center;
 }
 
+.col-md-3 p {
+  text-decoration: underline;
 
-.col-md-3, .col-md-8 {
+}
+
+.col-md-3 p:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.col-md-3 {
   border: 2px solid black;
 }
 
+.col-md-8 {
+  height: 500px;
+  overflow: auto;
+}
 
 
 .initially-hidden {
